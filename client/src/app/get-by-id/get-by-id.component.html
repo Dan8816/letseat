@@ -1,0 +1,22 @@
+<button [routerLink]="['/home']">Home</button>
+
+<p>Write a review</p>
+
+<form submit="createReview()">
+  <label for="CustName">Customer Name</label>
+  <input [(ngModel)]='review.CustName' type="text" name="CustName" id="CustName">
+  <br><br>
+  <label for="description">Restaurant description:</label>
+  <input [(ngModel)]='review.description' type="text" name="description" id="description">
+  <br><br>
+  <input type="text" [(ngModel)]="OneRestaurant['_id']" name="OneRestaurant._id" id="">
+  <label for="stars">Starts</label>
+  <select name="review.stars" id="review.stars" [(ngModel)]='review.stars'>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <br><br>
+  <input (click)="createReview(review, OneRestaurant, $event)" [routerLink]="['/home']" type="submit" value="Submit">
+</form>

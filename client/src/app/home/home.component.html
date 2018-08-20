@@ -1,0 +1,14 @@
+<button [routerLink]="['/create']">New Restaurant</button>
+
+<table border="1">
+  <tr>
+    <td><h2>Restaurant</h2></td>
+    <td><h2>Cuisine</h2></td>
+    <td><h2>Actions Available</h2></td>
+  </tr>
+  <tr *ngFor='let i of restaurants'>
+    <td><h3>{{ i.RestName }}</h3></td>
+    <td><h3>{{ i.Cuisine }}</h3></td>
+    <td><button (click)="getOneRestaurant(i)" [routerLink]="['/get-by-id']">Read reviews</button>&nbsp;<button (click)="editRestaurant(i)" [routerLink]="['/edit']">Update</button>&nbsp;<button (click)="removeRestaurant(i)" [routerLink]="['/home']">Delete</button></td>
+  </tr>
+</table>

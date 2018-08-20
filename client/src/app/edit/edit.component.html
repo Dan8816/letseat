@@ -1,0 +1,14 @@
+<button [routerLink]="['/home']">Home</button>
+
+<p>Edit a restaurant:</p>
+
+<form>
+  <label for="RestName">Restaurant Name:</label>
+  <input [(ngModel)]='thisRestaurant.RestName' type="text" name="RestName" id="RestName"><br><br>
+  <label for="Cuisine">Restaurant Cuisine:</label>
+  <input [(ngModel)]='thisRestaurant.Cuisine' type="text" name="Cuisine" id="Cuisine" ><br><br>
+  <button [routerLink]="['/home']">Cancel</button>&nbsp;
+  <input (click)="editRestaurant(thisRestaurant ,$event)" [routerLink]="['/home']" type="submit" value="Submit">
+  <br>
+  <small *ngIf="errors">{{ errors.name.message }}</small>
+</form>
